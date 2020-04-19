@@ -41,7 +41,7 @@ func (l *License) WriteFile() error {
 		return fmt.Errorf("%v: cannot parse template: %v", errorKey, err.Error())
 	}
 
-	fh, err := os.OpenFile(outputFilename, os.O_CREATE|os.O_WRONLY, 0644)
+	fh, err := os.OpenFile(outputFilename, os.O_EXCL|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		return fmt.Errorf("%v: cannot open file: %v", errorKey, err.Error())
 	}
