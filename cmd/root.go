@@ -36,7 +36,7 @@ func init() {
 		if len(repoParts) > 1 {
 			defaultOrg = repoParts[0]
 			defaultName = repoParts[1]
-			defaultSource = fmt.Sprintf("github.com/%v/%v", defaultOrg, defaultName)
+			defaultSource = fmt.Sprintf("https://github.com/%v/%v", defaultOrg, defaultName)
 		}
 
 	}

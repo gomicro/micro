@@ -47,7 +47,11 @@ func (r *Readme) ReleaseURL() string {
 // It returns any errors it encounters with the template and writing the file to
 // disk.
 func (r *Readme) WriteFile() error {
-	tmpl, err := template.New("").Parse(stub)
+	funcMap := template.FuncMap{
+		"Title": strings.Title,
+	}
+
+	tmpl, err := template.New("").Funcs(funcMap).Parse(stub)
 	if err != nil {
 		return fmt.Errorf("%v: cannot parse template: %v", errorKey, err.Error())
 	}

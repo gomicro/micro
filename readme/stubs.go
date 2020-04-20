@@ -1,7 +1,7 @@
 package readme
 
 const (
-	stub = `# {{ .Name }}{{ if .Installable }}
+	stub = `# {{ .Name | Title }}{{ if .Installable }}
 
 ## Installation
 
