@@ -8,6 +8,7 @@ import (
 	"github.com/spf13/cobra"
 
 	"github.com/gomicro/service/gitignore"
+	"github.com/gomicro/service/gofiles"
 	"github.com/gomicro/service/license"
 	"github.com/gomicro/service/readme"
 )
@@ -16,6 +17,7 @@ var (
 	org         string
 	name        string
 	source      string
+	database    bool
 	installable bool
 )
 
@@ -44,6 +46,7 @@ func init() {
 	RootCmd.Flags().StringVar(&org, "org", defaultOrg, "organization name")
 	RootCmd.Flags().StringVar(&name, "name", defaultName, "service name")
 	RootCmd.Flags().StringVar(&source, "source", defaultSource, "source location")
+	RootCmd.Flags().BoolVar(&database, "db", false, "whether the service will have a database or not")
 	RootCmd.Flags().BoolVar(&installable, "installable", false, "whether the service will be installable or not")
 }
 
@@ -76,6 +79,17 @@ func rootFunc(cmd *cobra.Command, args []string) {
 
 	gi := gitignore.New(name)
 	err = gi.WriteFile()
+	if err != nil {
+		fmt.Println(err.Error())
+		os.Exit(1)
+	}
+
+	gf := gofiles.New(name)
+	if database {
+		gf.EnableDB()
+	}
+
+	err = gf.WriteFiles()
 	if err != nil {
 		fmt.Println(err.Error())
 		os.Exit(1)
