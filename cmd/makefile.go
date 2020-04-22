@@ -23,7 +23,7 @@ var MakefileCmd = &cobra.Command{
 }
 
 func makefileFunc(cmd *cobra.Command, args []string) {
-	m := mkfile.New()
+	m := mkfile.New(org, name)
 	err := m.WriteFile()
 	if err != nil {
 		fmt.Println(err.Error())
