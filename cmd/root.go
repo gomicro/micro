@@ -6,11 +6,6 @@ import (
 	"strings"
 
 	"github.com/spf13/cobra"
-
-	"github.com/gomicro/service/gitignore"
-	"github.com/gomicro/service/gofiles"
-	"github.com/gomicro/service/license"
-	"github.com/gomicro/service/readme"
 )
 
 var (
@@ -59,41 +54,10 @@ var RootCmd = &cobra.Command{
 }
 
 func rootFunc(cmd *cobra.Command, args []string) {
-	l := license.New(org)
-	err := l.WriteFile()
-	if err != nil {
-		fmt.Println(err.Error())
-		os.Exit(1)
-	}
-
-	r := readme.New(name, source)
-	if installable {
-		r.EnableInstallable()
-	}
-
-	err = r.WriteFile()
-	if err != nil {
-		fmt.Println(err.Error())
-		os.Exit(1)
-	}
-
-	gi := gitignore.New(name)
-	err = gi.WriteFile()
-	if err != nil {
-		fmt.Println(err.Error())
-		os.Exit(1)
-	}
-
-	gf := gofiles.New(name)
-	if database {
-		gf.EnableDB()
-	}
-
-	err = gf.WriteFiles()
-	if err != nil {
-		fmt.Println(err.Error())
-		os.Exit(1)
-	}
+	licenseFunc(cmd, args)
+	readmeFunc(cmd, args)
+	gitignoreFunc(cmd, args)
+	gofilesFunc(cmd, args)
 }
 
 // Execute wraps the command executor to make it possible to trigger easily
