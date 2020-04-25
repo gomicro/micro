@@ -11,6 +11,7 @@ import (
 
 func init() {
 	RootCmd.AddCommand(ReadmeCmd)
+	funcs = append(funcs, readmeFunc)
 }
 
 // ReadmeCmd represents the command that executes all of tasks for bootstrapping

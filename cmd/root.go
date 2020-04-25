@@ -9,6 +9,9 @@ import (
 )
 
 var (
+	funcs []func(cmd *cobra.Command, args []string)
+
+	// Flag vars
 	org         string
 	name        string
 	source      string
@@ -54,10 +57,9 @@ var RootCmd = &cobra.Command{
 }
 
 func rootFunc(cmd *cobra.Command, args []string) {
-	licenseFunc(cmd, args)
-	readmeFunc(cmd, args)
-	gitignoreFunc(cmd, args)
-	gofilesFunc(cmd, args)
+	for i := range funcs {
+		funcs[i](cmd, args)
+	}
 }
 
 // Execute wraps the command executor to make it possible to trigger easily
