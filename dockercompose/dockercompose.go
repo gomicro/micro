@@ -51,7 +51,7 @@ func (d *DockerCompose) WriteFile() error {
 		return fmt.Errorf("%v: template failed execution: %v", errorKey, err.Error())
 	}
 
-	envFh, err := os.Create(".env.test")
+	envFh, err := os.Create("env.test")
 	if err != nil {
 		return fmt.Errorf("%v: cannot create file: %v", errorKey, err.Error())
 	}
