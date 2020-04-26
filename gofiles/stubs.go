@@ -105,6 +105,7 @@ func configure() {
 		config.SSLCert = string(c)
 	}
 
+	steward.SetStatusEndpoint("/v1/status")
 	steward.SetStatusResponse(&statusResponse{
 		Application: appName,
 		Version:     appVersion,
