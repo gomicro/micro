@@ -11,7 +11,7 @@ services:
     networks:
       - services
     healthcheck:
-      test: ["CMD", "/probe", "-kv", "https://localhost:4567/v1/status"]
+      test: ["CMD", "/probe", "-kv", "http://localhost:4567/v1/status"]
       interval: 5s
       timeout: 60s
       retries: 3
