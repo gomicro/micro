@@ -11,6 +11,7 @@ import (
 
 func init() {
 	RootCmd.AddCommand(GofilesCmd)
+	funcs = append(funcs, gofilesFunc)
 }
 
 // GofilesCmd represents the command that executes all of tasks for

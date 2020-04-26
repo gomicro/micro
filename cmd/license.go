@@ -11,6 +11,7 @@ import (
 
 func init() {
 	RootCmd.AddCommand(LicenseCmd)
+	funcs = append(funcs, licenseFunc)
 }
 
 // LicenseCmd represents the command that executes all of tasks for

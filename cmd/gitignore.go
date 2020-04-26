@@ -11,6 +11,7 @@ import (
 
 func init() {
 	RootCmd.AddCommand(GitignoreCmd)
+	funcs = append(funcs, gitignoreFunc)
 }
 
 // GitignoreCmd represents the command that executes all of tasks for
