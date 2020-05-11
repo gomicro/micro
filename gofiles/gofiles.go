@@ -28,9 +28,9 @@ func (s *Service) EnableDB() {
 	s.Database = true
 }
 
-// WriteFiles writes the current license file struct to an actualized LICENSE
-// file. It returns any errors it encounters with the template and writing the
-// file to disk.
+// WriteFiles writes the current service struct to actualized go files. It
+// returns any errors it encounters with the template and writing the file to
+// disk.
 func (s *Service) WriteFiles() error {
 	for outputFilename, stub := range stubs {
 		tmpl, err := template.New("").Parse(stub)
