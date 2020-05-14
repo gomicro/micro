@@ -1,4 +1,4 @@
-package cmd
+package initialize
 
 import (
 	"fmt"
@@ -10,7 +10,7 @@ import (
 )
 
 func init() {
-	RootCmd.AddCommand(GitignoreCmd)
+	InitializeCmd.AddCommand(GitignoreCmd)
 	funcs = append(funcs, gitignoreFunc)
 }
 
