@@ -1,4 +1,4 @@
-package cmd
+package initialize
 
 import (
 	"fmt"
@@ -10,7 +10,7 @@ import (
 )
 
 func init() {
-	RootCmd.AddCommand(ReadmeCmd)
+	InitializeCmd.AddCommand(ReadmeCmd)
 	funcs = append(funcs, readmeFunc)
 }
 
@@ -18,7 +18,7 @@ func init() {
 // a Readme
 var ReadmeCmd = &cobra.Command{
 	Use:   "readme",
-	Short: "Generate a bootstrap of a Readme",
+	Short: "Initialize a Readme file",
 	Run:   readmeFunc,
 }
 

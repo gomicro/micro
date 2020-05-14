@@ -1,4 +1,4 @@
-package cmd
+package initialize
 
 import (
 	"fmt"
@@ -10,7 +10,7 @@ import (
 )
 
 func init() {
-	RootCmd.AddCommand(LicenseCmd)
+	InitializeCmd.AddCommand(LicenseCmd)
 	funcs = append(funcs, licenseFunc)
 }
 
@@ -18,7 +18,7 @@ func init() {
 // bootstrapping a License
 var LicenseCmd = &cobra.Command{
 	Use:   "license",
-	Short: "Generate a bootstrap of a License",
+	Short: "Initialize a License file",
 	Run:   licenseFunc,
 }
 

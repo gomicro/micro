@@ -1,4 +1,4 @@
-package cmd
+package initialize
 
 import (
 	"fmt"
@@ -10,7 +10,7 @@ import (
 )
 
 func init() {
-	RootCmd.AddCommand(DockerfileCmd)
+	InitializeCmd.AddCommand(DockerfileCmd)
 	funcs = append(funcs, dockerfileFunc)
 }
 
@@ -18,7 +18,7 @@ func init() {
 // bootstrapping a Dockerfile
 var DockerfileCmd = &cobra.Command{
 	Use:   "dockerfile",
-	Short: "Generate a bootstrap of a Dockerfile",
+	Short: "Initialize a Dockerfile",
 	Run:   dockerfileFunc,
 }
 

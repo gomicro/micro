@@ -25,7 +25,7 @@ func init() {
 // service cli.
 var CompletionCmd = &cobra.Command{
 	Use:   "completion",
-	Short: "Generate completion files for service",
+	Short: "Generate completion files for the service cli",
 	Run:   completionFunc,
 }
 

@@ -1,4 +1,4 @@
-package cmd
+package initialize
 
 import (
 	"fmt"
@@ -10,7 +10,7 @@ import (
 )
 
 func init() {
-	RootCmd.AddCommand(MakefileCmd)
+	InitializeCmd.AddCommand(MakefileCmd)
 	funcs = append(funcs, makefileFunc)
 }
 
@@ -18,7 +18,7 @@ func init() {
 // bootstrapping a Makefile
 var MakefileCmd = &cobra.Command{
 	Use:   "makefile",
-	Short: "Generate a bootstrap of a Makefile",
+	Short: "Initialize a Makefile",
 	Run:   makefileFunc,
 }
 

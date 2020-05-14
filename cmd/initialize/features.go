@@ -1,4 +1,4 @@
-package cmd
+package initialize
 
 import (
 	"fmt"
@@ -10,7 +10,7 @@ import (
 )
 
 func init() {
-	RootCmd.AddCommand(FeaturesCmd)
+	InitializeCmd.AddCommand(FeaturesCmd)
 	funcs = append(funcs, featuresFunc)
 }
 
@@ -18,7 +18,7 @@ func init() {
 // bootstrapping the functional tests
 var FeaturesCmd = &cobra.Command{
 	Use:   "features",
-	Short: "Generate a bootstrap of functional tests",
+	Short: "Initialize functional tests",
 	Run:   featuresFunc,
 }
 
