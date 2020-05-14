@@ -11,6 +11,7 @@ When('I hit the status endpoint') do
 end
 
 # Thens
-Then('I get a sucess response') do
-	expect(@response.code.to_i).to(eql(200))
+Then('I get a success response') do
+  expect(@response).not_to(be_nil, 'expected: response not nil\ngot: response nil')
+  expect(@response.code.to_i).to(eql(200))
 end`
