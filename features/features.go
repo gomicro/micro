@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"strings"
 	"text/template"
 )
 
@@ -12,12 +13,16 @@ const (
 	errorKey       = "features"
 )
 
+// Features represents the required information for a feature template
 type Features struct {
+	Name string
 }
 
 // New takes a name and returns a viable features struct
 func New(name string) *Features {
-	return &Features{}
+	return &Features{
+		Name: strings.ToUpper(name),
+	}
 }
 
 // WriteFiles writes the current service struct to actualized feature files. It

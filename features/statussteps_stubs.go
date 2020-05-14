@@ -7,7 +7,7 @@ end
 
 # Whens
 When('I hit the status endpoint') do
-  @response = get('/v1/status')
+  @response = Cucumber.get('/v1/status')
 end
 
 # Thens
