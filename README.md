@@ -8,37 +8,29 @@
 Service is a bootstrapping generator for creating new microservices.
 
 ## Installing
+
+### From Source
+
 ```
 go get github.com/gomicro/service
+cd $GOPATH/src/github.com/gomicro/service
+make build install
 ```
+
+### From Relases
+
+See [latest releases](https://github.com/gomicro/service/releases/latest) for precompiled binaries.
 
 ## Usage
 
-```
-Generate a bootstrap of a new microservice
-
-Usage:
-  service [flags]
-  service [command]
-
-Available Commands:
-  help        Help about any command
-  version     Display the version
-
-Flags:
-      --db              whether the service will have a database or not
-  -h, --help            help for service
-      --installable     whether the service will be installable or not
-      --name string     service name (default "service")
-      --org string      organization name (default "gomicro")
-      --source string   source location (default "https://github.com/gomicro/service")
-
-Use "service [command] --help" for more information about a command.
-```
+1. create new directory for desired service
+2. run `service` within that directory
+3. vendor your dependecies with your tool of choice
+4. run and test the new service with `make run test`
 
 ## Versioning
 
-The project will be versioned in accordance with [Semver 2.0.0](https://semver.org). See the [releases](https://github.com/gomicro/butcher/releases) section for the latest version. Until version 1.0.0 the project is considered to be unstable.
+The project will be versioned in accordance with [Semver 2.0.0](https://semver.org). See the [releases](https://github.com/gomicro/service/releases) section for the latest version. Until version 1.0.0 the project is considered to be unstable.
 
 It is always highly recommended to vendor the version you are using.
 
