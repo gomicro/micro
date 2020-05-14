@@ -18,7 +18,7 @@ func init() {
 // bootstrapping a License
 var LicenseCmd = &cobra.Command{
 	Use:   "license",
-	Short: "Generate a bootstrap of a License",
+	Short: "Initialize a License file",
 	Run:   licenseFunc,
 }
 

@@ -18,7 +18,7 @@ func init() {
 // bootstrapping a Makefile
 var MakefileCmd = &cobra.Command{
 	Use:   "makefile",
-	Short: "Generate a bootstrap of a Makefile",
+	Short: "Initialize a Makefile",
 	Run:   makefileFunc,
 }
 

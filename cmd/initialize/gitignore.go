@@ -18,7 +18,7 @@ func init() {
 // bootstrapping a Gitignore
 var GitignoreCmd = &cobra.Command{
 	Use:   "gitignore",
-	Short: "Generate a bootstrap of a Gitignore",
+	Short: "Initialize a .gitignore file",
 	Run:   gitignoreFunc,
 }
 

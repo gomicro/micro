@@ -18,7 +18,7 @@ func init() {
 // bootstrapping a Dockerfile
 var DockerfileCmd = &cobra.Command{
 	Use:   "dockerfile",
-	Short: "Generate a bootstrap of a Dockerfile",
+	Short: "Initialize a Dockerfile",
 	Run:   dockerfileFunc,
 }
 

@@ -18,7 +18,7 @@ func init() {
 // bootstrapping the functional tests
 var FeaturesCmd = &cobra.Command{
 	Use:   "features",
-	Short: "Generate a bootstrap of functional tests",
+	Short: "Initialize functional tests",
 	Run:   featuresFunc,
 }
 

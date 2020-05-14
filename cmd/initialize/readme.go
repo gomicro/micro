@@ -18,7 +18,7 @@ func init() {
 // a Readme
 var ReadmeCmd = &cobra.Command{
 	Use:   "readme",
-	Short: "Generate a bootstrap of a Readme",
+	Short: "Initialize a Readme file",
 	Run:   readmeFunc,
 }
 

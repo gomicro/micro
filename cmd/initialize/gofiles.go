@@ -18,7 +18,7 @@ func init() {
 // bootstrapping the  Go files
 var GofilesCmd = &cobra.Command{
 	Use:   "gofiles",
-	Short: "Generate a bootstrap of Go files",
+	Short: "Initialize the go files",
 	Run:   gofilesFunc,
 }
 

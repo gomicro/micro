@@ -18,7 +18,7 @@ func init() {
 // bootstrapping a Dockercompose
 var DockercomposeCmd = &cobra.Command{
 	Use:   "dockercompose",
-	Short: "Generate a bootstrap of a Dockercompose",
+	Short: "Initialize a docker-compose file",
 	Run:   dockercomposeFunc,
 }
 
