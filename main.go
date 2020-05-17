@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/gomicro/service/cmd"
+	"github.com/gomicro/micro/cmd"
 )
 
 func main() {

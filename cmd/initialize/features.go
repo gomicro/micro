@@ -6,7 +6,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/gomicro/service/features"
+	"github.com/gomicro/micro/features"
 )
 
 func init() {

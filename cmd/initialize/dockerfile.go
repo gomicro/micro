@@ -6,7 +6,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/gomicro/service/dockerfile"
+	"github.com/gomicro/micro/dockerfile"
 )
 
 func init() {
