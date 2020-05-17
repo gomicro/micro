@@ -25,7 +25,7 @@ all: test build
 
 .PHONY: build
 build: ## Build the project
-	CGO_ENABLED=$(CGO_ENABLED) GOOS=$(GOOS) $(GOBUILD) -ldflags "-X github.com/gomicro/service/cmd.Version=$(BUILD_VERSION)" -o $(APP) .
+	CGO_ENABLED=$(CGO_ENABLED) GOOS=$(GOOS) $(GOBUILD) -ldflags "-X github.com/gomicro/micro/cmd.Version=$(BUILD_VERSION)" -o $(APP) .
 
 .PHONY: clean
 clean: ## Clean out all generated files
