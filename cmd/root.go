@@ -6,16 +6,16 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/gomicro/service/cmd/initialize"
+	"github.com/gomicro/micro/cmd/initialize"
 )
 
 func init() {
 	RootCmd.AddCommand(initialize.InitializeCmd)
 }
 
-// RootCmd represents the root command for the service cli
+// RootCmd represents the root command for the micro cli
 var RootCmd = &cobra.Command{
-	Use:   "service",
+	Use:   "micro",
 	Short: "A cli tool for bootstrapping a new microservice",
 }
 

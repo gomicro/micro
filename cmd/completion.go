@@ -22,10 +22,10 @@ func init() {
 }
 
 // CompletionCmd represents the command for generating completion files for the
-// service cli.
+// micro cli.
 var CompletionCmd = &cobra.Command{
 	Use:   "completion",
-	Short: "Generate completion files for the service cli",
+	Short: "Generate completion files for the micro cli",
 	Run:   completionFunc,
 }
 

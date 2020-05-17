@@ -1,4 +1,4 @@
-module github.com/gomicro/service
+module github.com/gomicro/micro
 
 go 1.13
 
