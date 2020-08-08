@@ -6,7 +6,12 @@ import (
 )
 
 func getStub(name string) (string, error) {
-	stub, found := stubs[strings.ToUpper(name)]
+	name = strings.ToUpper(name)
+	name = strings.ReplaceAll(name, "-", "")
+	name = strings.ReplaceAll(name, ".", "")
+	name = strings.ReplaceAll(name, " ", "")
+
+	stub, found := stubs[name]
 	if !found {
 		return "", fmt.Errorf("license: license template not found")
 	}
