@@ -30,6 +30,11 @@ func TestGetStub(t *testing.T) {
 		t.Errorf("expected APACHE20 stub\ngot '%v'", stub)
 	}
 
+	stub, err = getStub("apache license 2.0")
+	if err != nil {
+		t.Errorf("expected APACHE20 stub\ngot '%v'", stub)
+	}
+
 	stub, err = getStub("apache-2.0")
 	if err != nil {
 		t.Errorf("expected APACHE20 stub\ngot '%v'", stub)
