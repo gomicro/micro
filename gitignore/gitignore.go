@@ -9,17 +9,26 @@ import (
 const (
 	outputFilename = ".gitignore"
 	errorKey       = "gitignore"
-	stub           = "{{ range .Ignores }}{{ . }}\n{{ end }}"
+	stub           = `# Binary
+/{{ .Name }}
+
+# Directories
+.DS_Store
+
+# Additional Items
+{{ range .Ignores }}{{ . }}\n{{ end }}`
 )
 
 // Gitignore is a struct representation of a gitignore template
 type Gitignore struct {
+	Name    string
 	Ignores []string
 }
 
 // New takes a name and returns a viable license struct
-func New(ignores ...string) *Gitignore {
+func New(name string, ignores ...string) *Gitignore {
 	return &Gitignore{
+		Name:    name,
 		Ignores: ignores,
 	}
 }
