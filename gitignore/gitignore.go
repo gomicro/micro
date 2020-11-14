@@ -16,6 +16,7 @@ const (
 .DS_Store
 
 # Additional Items
+coverage.txt
 {{ range .Ignores }}{{ . }}\n{{ end }}`
 )
 
