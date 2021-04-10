@@ -36,7 +36,7 @@ func (m *Makefile) WriteFile() error {
 	}
 
 	for name, s := range stubs {
-		tmpl.New(name).Parse(s)
+		_, err := tmpl.New(name).Parse(s)
 		if err != nil {
 			return fmt.Errorf("%v: cannot parse template: %v", errorKey, err.Error())
 		}
