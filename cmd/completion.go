@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"fmt"
 	"os"
 	"strings"
 
@@ -30,15 +31,21 @@ var CompletionCmd = &cobra.Command{
 }
 
 func completionFunc(cmd *cobra.Command, args []string) {
+	var err error
 	switch strings.ToLower(shell) {
 	case "bash":
-		RootCmd.GenBashCompletion(os.Stdout)
+		err = RootCmd.GenBashCompletion(os.Stdout)
 	case "fish":
-		RootCmd.GenFishCompletion(os.Stdout, false)
+		err = RootCmd.GenFishCompletion(os.Stdout, false)
 	case "ps", "powershell", "power_shell":
-		RootCmd.GenPowerShellCompletion(os.Stdout)
+		err = RootCmd.GenPowerShellCompletion(os.Stdout)
 	case "zsh":
-		RootCmd.GenZshCompletion(os.Stdout)
+		err = RootCmd.GenZshCompletion(os.Stdout)
 	default:
+	}
+
+	if err != nil {
+		fmt.Printf("Failed to execute: %v", err.Error())
+		os.Exit(1)
 	}
 }

@@ -9,8 +9,7 @@ import (
 )
 
 const (
-	outputFilename = "status.feature"
-	errorKey       = "features"
+	errorKey = "features"
 )
 
 // Features represents the required information for a feature template
