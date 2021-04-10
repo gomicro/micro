@@ -1,7 +1,7 @@
 package dockerfile
 
 var (
-	stub = `FROM golang:1.14-alpine
+	stub = `FROM golang:1.16-alpine
 
 ARG BUILD_PATH
 
